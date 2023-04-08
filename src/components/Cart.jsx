@@ -34,6 +34,10 @@ const Cart = () => {
             Not including taxes and shipping costs
           </p>
         </div>
+        <div className="flex justify-end space-x-4">
+          <button className="btn-outlined">Clear Cart</button>
+          <button className="btn-primary">Place Order</button>
+        </div>
       </div>
     </div>
   );
