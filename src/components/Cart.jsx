@@ -1,6 +1,6 @@
 import React from "react";
 import { getStoredCart } from "../utils/fakeDB";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import CartItem from "./Cards/CartItem";
 
 const Cart = () => {
@@ -35,7 +35,13 @@ const Cart = () => {
           </p>
         </div>
         <div className="flex justify-end space-x-4">
-          <button className="btn-outlined">Clear Cart</button>
+          {cart.length > 0 ? (
+            <button className="btn-outlined">Clear Cart</button>
+          ) : (
+            <Link to="/shop">
+              <button className="btn-outlined">Back To Shop</button>
+            </Link>
+          )}
           <button className="btn-primary">Place Order</button>
         </div>
       </div>
