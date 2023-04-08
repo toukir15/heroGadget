@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div>
+      <div className="md:min-h-[calc(100vh-157px)]">
         <Outlet />
       </div>
       <Footer />
