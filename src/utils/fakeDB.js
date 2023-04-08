@@ -1,35 +1,35 @@
 const addToDb = (id) => {
-    let shoppingCard = {}
+    let shoppingCart = {}
 
     // get previous data from local Storage 
-    const storedCard = localStorage.getItem('shopping-card')
-    if (storedCard) {
-        shoppingCard = JSON.parse(storedCard)
+    const storedCart = localStorage.getItem('shopping-cart')
+    if (storedCart) {
+        shoppingCart = JSON.parse(storedCart)
     }
 
     // get quantity 
-    const quantity = shoppingCard[id]
+    const quantity = shoppingCart[id]
     if (quantity) {
         const newQuantity = quantity + 1;
-        shoppingCard[id] = newQuantity;
+        shoppingCart[id] = newQuantity;
     }
     else {
-        shoppingCard[id] = 1;
+        shoppingCart[id] = 1;
     }
 
-    localStorage.setItem('shopping-card', JSON.stringify(shoppingCard))
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart))
 }
 
 // get card from local storage 
-const getStoredCard = () => {
-    const shoppingCard = {};
+const getStoredCart = () => {
+    const shoppingCart = {};
 
     // get previous data from local storage 
-    const storedCard = localStorage.getItem('shopping-card')
-    if (storedCard) {
-        shoppingCard = JSON.parse(storedCard)
+    const storedCart = localStorage.getItem('shopping-cart')
+    if (storedCart) {
+        shoppingCart = JSON.parse(storedCart)
     }
-    return shoppingCard;
+    return shoppingCart;
 }
 
-export { addToDb, getStoredCard }
+export { addToDb, getStoredCart }
