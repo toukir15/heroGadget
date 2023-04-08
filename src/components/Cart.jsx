@@ -7,4 +7,4 @@ const Cart = () => {
   return <div>cart</div>;
 };
 
-export default Cart;
+// export default Cart;
