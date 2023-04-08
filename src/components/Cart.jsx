@@ -5,6 +5,13 @@ import CartItem from "./Cards/CartItem";
 
 const Cart = () => {
   const cart = useLoaderData();
+  let total = 0;
+  if (cart.length > 0) {
+    console.log(cart);
+    for (const product of cart) {
+      total = total + product.quantity * product.price;
+    }
+  }
   console.log(cart);
 
   return (
@@ -19,6 +26,14 @@ const Cart = () => {
             <CartItem key={product.id} product={product} />
           ))}
         </ul>
+        <div className="space-y-1 text-right">
+          <p>
+            Total amount: <span className="font-semibold">{total}$</span>
+          </p>
+          <p className="text-sm text-gray-400">
+            Not including taxes and shipping costs
+          </p>
+        </div>
       </div>
     </div>
   );
