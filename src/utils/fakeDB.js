@@ -22,7 +22,7 @@ const addToDb = (id) => {
 
 // get card from local storage 
 const getStoredCart = () => {
-    const shoppingCart = {};
+    let shoppingCart = {};
 
     // get previous data from local storage 
     const storedCart = localStorage.getItem('shopping-cart')
