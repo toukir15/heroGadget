@@ -20,4 +20,16 @@ const addToDb = (id) => {
     localStorage.setItem('shopping-card', JSON.stringify(shoppingCard))
 }
 
-export { addToDb }
+// get card from local storage 
+const getStoredCard = () => {
+    const shoppingCard = {};
+
+    // get previous data from local storage 
+    const storedCard = localStorage.getItem('shopping-card')
+    if (storedCard) {
+        shoppingCard = JSON.parse(storedCard)
+    }
+    return shoppingCard;
+}
+
+export { addToDb, getStoredCard }
